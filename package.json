@@ -17,8 +17,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "pg": "^6.0.0"
+  "peerDependencies": {
+    "pg": ">=6.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -30,6 +30,7 @@
     "babel-eslint": "^6.1.0",
     "eslint": "^2.13.1",
     "eslint-plugin-flowtype": "^2.2.7",
-    "eslint-plugin-import": "^1.9.2"
+    "eslint-plugin-import": "^1.9.2",
+    "pg": ">=6.0.0"
   }
 }

@@ -2,6 +2,10 @@
 
 Implementation for a medium blog post..
 
+# Installation
+
+`npm install --save cuery`
+
 # Usage
 
 ```js

@@ -1,4 +1,4 @@
-# Cuery - Composable SQL Querying
+# Cuery - Composable SQL Querying ![build status](https://travis-ci.org/Schniz/cuery.svg?branch=master)
 
 Implementation for a medium blog post..
 

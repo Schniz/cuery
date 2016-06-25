@@ -1,7 +1,6 @@
 import test from 'ava';
-import execute, { connect, doQuery } from '../src/execute';
-import paginate from '../src/paginate';
-import Query from '../src/Query';
+import { connect, doQuery } from '../src/execute';
+import { Query, paginate, execute } from '../src';
 
 const getRows = (...args) => execute(...args).then(e => e.rows);
 const tableRandom = Math.floor(Math.random() * 10000);

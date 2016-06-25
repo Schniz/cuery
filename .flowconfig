@@ -1,0 +1,20 @@
+[ignore]
+.*/node_modules/json5/.*
+.*/node_modules/fbjs/.*
+.*/node_modules/flow-typed/.*__tests__.*
+.*/node_modules/flow-typed/.*__mocks__.*
+.*/node_modules/flow-typed/src/cli.*
+.*/node_modules/react-infinite/.*
+\.css$
+
+[include]
+
+[libs]
+./interfaces/CSSFlowStub.js.flow
+./interfaces/ramda.js.flow
+
+[options]
+module.name_mapper='.*\(.css\)' -> 'CSSModule'
+module.name_mapper='.*\(.png\)' -> 'PNGModule'
+module.system=haste
+strip_root=true

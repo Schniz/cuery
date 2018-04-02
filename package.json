@@ -1,36 +1,9 @@
 {
   "name": "cuery",
-  "version": "0.2.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "scripts": {
-    "test": "ava --verbose",
-    "build": "babel -s inline --out-dir dist/ src/",
-    "prepublish": "npm run build"
-  },
-  "ava": {
-    "babel": "inherit",
-    "require": [
-      "babel-register"
-    ]
-  },
-  "keywords": [],
-  "author": "",
+  "version": "2.0.0",
+  "description": "A simple, composable, postgresql oriented database query",
   "license": "ISC",
-  "peerDependencies": {
-    "pg": ">=6.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-plugin-syntax-flow": "^6.8.0",
-    "babel-plugin-transform-flow-strip-types": "^6.8.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-1": "^6.5.0",
-    "ava": "^0.15.2",
-    "babel-eslint": "^6.1.0",
-    "eslint": "^2.13.1",
-    "eslint-plugin-flowtype": "^2.2.7",
-    "eslint-plugin-import": "^1.9.2",
-    "pg": ">=6.0.0"
-  }
+  "main": "index.js",
+  "repository": "git@github.com:schniz/cuery.git",
+  "author": "Gal Schlezinger <gal@spitfire.co.il>"
 }

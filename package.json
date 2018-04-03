@@ -10,7 +10,7 @@
     "build": "babel ./src -d lib/ --ignore __tests__",
     "build:watch": "yarn build --watch",
     "test": "jest",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "flow-bin": "^0.69.0",

@@ -36,7 +36,7 @@ You can declare helper methods that do magic on your queries, like `limit`:
 const limit = query =>
   sql`
     SELECT *
-    FROM (${query}) limited_query
+    FROM (${query}) limited_query_${Math.floor(Math.random() * 100000)}
     LIMIT ${p => p.limit}
     OFFSET ${p => p.offset}
   `;

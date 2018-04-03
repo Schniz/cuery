@@ -3,3 +3,4 @@
 /test
 *.spec.js
 README.md
+__snapshots__

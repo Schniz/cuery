@@ -9,6 +9,7 @@
   "scripts": {
     "build": "babel ./src -d lib/ --ignore __tests__",
     "build:watch": "yarn build --watch",
+    "test": "jest",
     "prepublish": "yarn build"
   },
   "devDependencies": {

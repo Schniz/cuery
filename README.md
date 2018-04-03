@@ -1,10 +1,12 @@
 # Cuery - Composable SQL Querying ![build status](https://travis-ci.org/Schniz/cuery.svg?branch=master)
 
-> A composable SQL query builder based inspired by [styled-components :nail_care:](https://styled-components.com) :sparkles:
+> A composable SQL query builder based inspired by
+> [styled-components :nail_care:](https://styled-components.com) :sparkles:
 
 In 2016, I wrote a blog post about
-[composing SQL queries](https://medium.com/@galstar/composable-sql-in-javascript-db51d9cae017) and published this library as a reference.
-The years passed, and there are much cooler ways of doing it, so this is the new way - using template literals.
+[composing SQL queries](https://medium.com/@galstar/composable-sql-in-javascript-db51d9cae017)
+and published this library as a reference. The years passed, and there are much
+cooler ways of doing it, so this is the new way - using template literals.
 
 # Installation
 
@@ -17,7 +19,7 @@ npm install --save cuery pg
 # Usage
 
 ```js
-import { sql } from "cuery";
+import { sql, execute } from "cuery";
 
 const usersQuery = sql`SELECT * FROM users`;
 const usersWithNameQuery = sql`
@@ -44,7 +46,7 @@ const limit = query =>
 // then you can just compose your queries!
 
 const users = sql`SELECT * FROM users`;
-const usersWithLimit = users.compose(limit);
+const usersWithLimit = users.compose(limit); // or limit(users)
 execute(usersWithLimit, { limit: 10, offset: 10 }); // start with offset of 10, then take 10 records.
 ```
 

@@ -1,7 +1,10 @@
 # Cuery - Composable SQL Querying ![build status](https://travis-ci.org/Schniz/cuery.svg?branch=master)
 
-A composable SQL query builder based on string literals and transformation
-functions :sparkles:
+> A composable SQL query builder based inspired by [styled-components :nail_care:](https://styled-components.com) :sparkles:
+
+In 2016, I wrote a blog post about
+[composing SQL queries](https://medium.com/@galstar/composable-sql-in-javascript-db51d9cae017) and published this library as a reference.
+The years passed, and there are much cooler ways of doing it, so this is the new way - using template literals.
 
 # Installation
 
@@ -47,5 +50,6 @@ execute(usersWithLimit, { limit: 10, offset: 10 }); // start with offset of 10, 
 
 # Running tests
 
-* set the `DATABASE_URL` env variable for your PostgreSQL server - defaults to `node-postgres`' default
+* set the `DATABASE_URL` env variable for your PostgreSQL server - defaults to
+  `node-postgres`' default
 * `yarn test`

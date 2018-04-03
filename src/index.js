@@ -1,5 +1,8 @@
 // @flow
 
-export { default as Query } from './Query';
-export { default as execute } from './execute';
-export { default as paginate } from './paginate';
+import Query from "./Query";
+import { type SqlFunctionParameter } from "./types";
+import buildQueryString from "./buildQueryString";
+
+export { default as sql } from "./sql";
+export { default as execute } from "./execute";

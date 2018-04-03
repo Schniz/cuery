@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`composes 1`] = `
+Query {
+  "queryMeta": Object {
+    "params": Array [
+      "first query param",
+      "second query param",
+    ],
+    "query": "select * from (select * from (select * from users where id = $1) where name = $2) limit 1",
+  },
+}
+`;
+
+exports[`it builds a query object 1`] = `
+Query {
+  "queryMeta": Object {
+    "params": Array [
+      "some id",
+    ],
+    "query": "select * from users where id = $1",
+  },
+}
+`;

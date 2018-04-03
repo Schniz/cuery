@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-  - "6"
-  - "6.1"
-  - "5.11"
+  - "9"
+  - "8"
+  - "7"
 services:
   - postgresql
+env:
+  - DATABASE_URL="postgres://postgres@localhost:5432/"
 before_script:
   - psql -c 'create database travis;' -U postgres

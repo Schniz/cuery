@@ -1,22 +1,29 @@
 // @flow
 
-export type QueryData = {
-  query: string;
-  params: Array<string>;
-};
+import { type QueryMeta } from "./types";
+import execute from './execute';
 
 export default class Query {
-  static of(queryData: QueryData) {
-    return new Query(queryData);
+  queryMeta: QueryMeta;
+
+  constructor(queryMeta: QueryMeta) {
+    this.queryMeta = queryMeta;
   }
 
-  queryData : QueryData;
-
-  constructor(queryData : QueryData) {
-    this.queryData = queryData;
+  getParamsArray(args: *) {
+    return this.queryMeta.params.map(fn => {
+      if (typeof fn === "function") {
+        return fn(args);
+      }
+      return fn;
+    });
   }
 
-  map(f : (queryData : QueryData) => QueryData) {
-    return Query.of(f(this.queryData));
+  map(fn: QueryMeta => QueryMeta) {
+    return new Query(fn(this.queryMeta));
+  }
+
+  compose(fn: Query => Query) {
+    return fn(this);
   }
 }

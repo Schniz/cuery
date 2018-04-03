@@ -1,3 +1,5 @@
 /node_modules
 /src
 /test
+*.spec.js
+__snapshots__

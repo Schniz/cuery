@@ -5,5 +5,20 @@
   "license": "ISC",
   "main": "index.js",
   "repository": "git@github.com:schniz/cuery.git",
-  "author": "Gal Schlezinger <gal@spitfire.co.il>"
+  "author": "Gal Schlezinger <gal@spitfire.co.il>",
+  "scripts": {
+    "build": "babel ./src -d lib/ --ignore __tests__",
+    "build:watch": "yarn build --watch"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.69.0",
+    "jest": "^22.4.3",
+    "pg": "^7.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0"
+  },
+  "peerDependencies": {
+    "pg": "^7.4.1"
+  }
 }

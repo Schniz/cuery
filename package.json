@@ -1,14 +1,15 @@
 {
   "name": "cuery",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.1",
   "description": "A simple, composable, postgresql oriented database query",
   "license": "ISC",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": "git@github.com:schniz/cuery.git",
   "author": "Gal Schlezinger <gal@spitfire.co.il>",
   "scripts": {
     "build": "babel ./src -d lib/ --ignore __tests__",
-    "build:watch": "yarn build --watch"
+    "build:watch": "yarn build --watch",
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "flow-bin": "^0.69.0",

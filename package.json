@@ -2,7 +2,7 @@
   "name": "cuery",
   "version": "2.0.1",
   "description": "A simple, composable, postgresql oriented database query",
-  "license": "ISC",
+  "license": "MIT",
   "main": "./lib/index.js",
   "repository": "git@github.com:schniz/cuery.git",
   "author": "Gal Schlezinger <gal@spitfire.co.il>",

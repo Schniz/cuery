@@ -7,5 +7,3 @@ services:
   - postgresql
 env:
   - DATABASE_URL="postgres://postgres@localhost:5432/"
-before_script:
-  - psql -c 'create database travis;' -U postgres

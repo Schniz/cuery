@@ -1,5 +1,6 @@
-import { sql, createSqlWithDefaults } from "./pg";
+import { raw, sql, createSqlWithDefaults } from "./pg";
 import Pg from "pg";
+import { Query } from "./core";
 
 let pool: Pg.Pool;
 
@@ -52,4 +53,26 @@ test("composition", async () => {
   const result = await composition.execute({ name: "Gal" }, { pool });
 
   expect(result[0].uppercased).toBe("GAL");
+});
+
+test("a query composition function", async () => {
+  function limit<Input, Output>(query: Query<Input, Output>) {
+    return sql<Input & { limit: Number; offset: Number }, Output>`
+      SELECT *
+      FROM (${query}) LIMITED__QUERY__${raw(Math.floor(Math.random() * 99999))}
+      LIMIT ${p => p.limit}
+      OFFSET ${p => p.offset}
+    `;
+  }
+
+  const simpleQuery = sql<{}, { name: string }>`
+    SELECT *
+    FROM (VALUES ('hello'), ('world')) names(name)
+  `;
+
+  const limited = limit(simpleQuery);
+
+  const result = await limited.execute({ limit: 1, offset: 0 }, { pool });
+
+  console.log(result);
 });

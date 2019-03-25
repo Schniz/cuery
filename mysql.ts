@@ -99,3 +99,5 @@ export function createSqlWithDefaults(options: ExecuteOptions) {
     return new MysqlQueryWithDefaults<Input, Output>(nodes, options);
   };
 }
+
+export { raw } from "./core";

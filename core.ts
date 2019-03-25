@@ -21,10 +21,27 @@ export abstract class Query<Input, Output> {
   }
 }
 
+class Raw {
+  value: Primitive;
+
+  constructor(value: Primitive) {
+    this.value = value;
+  }
+
+  toString() {
+    return String(this.value);
+  }
+}
+
+export function raw(primitive: Primitive) {
+  return new Raw(primitive);
+}
+
 export type SqlFunctionParam<Input, Output> =
   | AstNode<Input>[]
   | Query<Input, Output>
   | Param<Input>
+  | Raw
   | Primitive;
 
 export function parse<Input, Output>(
@@ -42,6 +59,8 @@ export function parse<Input, Output>(
     if (!param) {
     } else if (param instanceof Query) {
       nodes.push(...param.nodes);
+    } else if (param instanceof Raw) {
+      nodes.push({ type: "string", value: param.toString() });
     } else if (Array.isArray(param)) {
       nodes.push(...param);
     } else if (typeof param === "function") {

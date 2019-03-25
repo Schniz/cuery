@@ -85,3 +85,5 @@ export function createSqlWithDefaults(defaultOptions: ExecuteOptions) {
     return new PostgresQueryWithDefault<Input, Output>(nodes, defaultOptions);
   };
 }
+
+export { raw } from "./core";

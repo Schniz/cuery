@@ -8,6 +8,12 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10
+      - image: postgres:10
+        environment:
+          POSTGRES_PASSWORD: password
+      - image: mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: password
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

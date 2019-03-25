@@ -1,4 +1,4 @@
-import { raw, sql, createSqlWithDefaults } from "./pg";
+import { PostgresQuery, raw, sql, createSqlWithDefaults } from "./pg";
 import Pg from "pg";
 import { Query } from "./core";
 
@@ -56,7 +56,7 @@ test("composition", async () => {
 });
 
 test("a query composition function", async () => {
-  function limit<Input, Output>(query: Query<Input, Output>) {
+  function limit<Input, Output>(query: PostgresQuery<Input, Output>) {
     return sql<Input & { limit: Number; offset: Number }, Output>`
       SELECT *
       FROM (${query}) LIMITED__QUERY__${raw(Math.floor(Math.random() * 99999))}
@@ -72,7 +72,9 @@ test("a query composition function", async () => {
 
   const limited = limit(simpleQuery);
 
-  const result = await limited.execute({ limit: 1, offset: 0 }, { pool });
+  const first = await limited.execute({ limit: 1, offset: 0 }, { pool });
+  const last = await limited.execute({ limit: 1, offset: 1 }, { pool });
 
-  console.log(result);
+  expect(first[0].name).toBe("hello");
+  expect(last[0].name).toBe("world");
 });

@@ -10,7 +10,7 @@ type ExecuteOptions = {
   pool: Pg.Pool;
 };
 
-class PostgresQuery<Input, Output> extends Query<Input, Output> {
+export class PostgresQuery<Input, Output> extends Query<Input, Output> {
   compiledQuery?: CompiledQuery<Input>;
 
   compile() {
@@ -29,7 +29,7 @@ class PostgresQuery<Input, Output> extends Query<Input, Output> {
   }
 }
 
-class PostgresQueryWithDefault<Input, Output> extends PostgresQuery<
+export class PostgresQueryWithDefault<Input, Output> extends PostgresQuery<
   Input,
   Output
 > {

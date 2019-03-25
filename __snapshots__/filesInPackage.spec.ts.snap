@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Files that will be published to the repo 1`] = `
+Array [
+  "package.json",
+  "core.d.ts",
+  "index.d.ts",
+  "LICENSE",
+  "mysql.d.ts",
+  "README.md",
+  "tsconfig.json",
+]
+`;

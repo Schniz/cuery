@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`composes correctly 1`] = `
+Array [
+  Object {
+    "type": "string",
+    "value": "
+    SELECT * FROM (",
+  },
+  Object {
+    "type": "string",
+    "value": "
+    SELECT * FROM users
+  ",
+  },
+  Object {
+    "type": "string",
+    "value": ") all_users;
+  ",
+  },
+]
+`;
+
+exports[`parses a query 1`] = `
+Array [
+  Object {
+    "type": "string",
+    "value": "
+    SELECT first_name, last_name, age FROM table
+    WHERE first_name = ",
+  },
+  Object {
+    "type": "primitive",
+    "value": "Gal",
+  },
+  Object {
+    "type": "string",
+    "value": "
+    AND age = ",
+  },
+  Object {
+    "type": "computed",
+    "value": [Function],
+  },
+  Object {
+    "type": "string",
+    "value": "
+  ",
+  },
+]
+`;

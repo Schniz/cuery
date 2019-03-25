@@ -1,0 +1,8 @@
+*.spec.ts
+*.spec.js
+*.ts
+!*.d.ts
+*.spec.d.ts
+__snapshots__
+.vscode
+jest.config.js

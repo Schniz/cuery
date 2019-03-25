@@ -1,6 +1,5 @@
 import { PostgresQuery, raw, sql, createSqlWithDefaults } from "./pg";
 import Pg from "pg";
-import { Query } from "./core";
 
 let pool: Pg.Pool;
 
@@ -57,7 +56,7 @@ test("composition", async () => {
 
 test("a query composition function", async () => {
   function limit<Input, Output>(query: PostgresQuery<Input, Output>) {
-    return sql<Input & { limit: Number; offset: Number }, Output>`
+    return sql<Input & { limit: number; offset: number }, Output>`
       SELECT *
       FROM (${query}) LIMITED__QUERY__${raw(Math.floor(Math.random() * 99999))}
       LIMIT ${p => p.limit}

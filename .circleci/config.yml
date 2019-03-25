@@ -42,4 +42,11 @@ jobs:
       - run: npm run build
 
       # run tests!
-      - run: npm test
+      - run:
+          name: test
+          command: npm test -- --ci --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: ./test-results/jest/results.xml
+      
+      - store_test_results:
+          path: ./test-results

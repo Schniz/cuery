@@ -7,3 +7,4 @@ __snapshots__
 .vscode
 jest.config.js
 .circleci
+test-results

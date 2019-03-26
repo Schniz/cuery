@@ -8,3 +8,4 @@ __snapshots__
 jest.config.js
 .circleci
 test-results
+.nvmrc

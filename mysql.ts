@@ -22,7 +22,7 @@ export class MysqlQuery<Input, Output> extends Query<Input, Output> {
   }
 
   execute(data: Input, options: ExecuteOptions) {
-    const formattedQuery = format(data, options.connection, this.compile());
+    const formattedQuery = format(data, this.compile());
     return new Promise<Output[]>((res, rej) => {
       options.connection.query(formattedQuery, (err, result) => {
         if (err) return rej(err);
@@ -84,10 +84,9 @@ export function sql<Input, Output>(
 
 export function format<A>(
   data: A,
-  mysql: Mysql.Connection,
   { queryString, params }: CompiledQuery<A>
 ) {
-  return mysql.format(queryString, params.map(fn => fn(data)));
+  return Mysql.format(queryString, params.map(fn => fn(data)));
 }
 
 export function createSqlWithDefaults(options: ExecuteOptions) {

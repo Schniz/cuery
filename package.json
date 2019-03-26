@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": [],
   "author": "",

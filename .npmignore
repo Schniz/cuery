@@ -1,5 +1,10 @@
-/node_modules
-/src
-/test
+*.spec.ts
 *.spec.js
+*.ts
+!*.d.ts
+*.spec.d.ts
 __snapshots__
+.vscode
+jest.config.js
+.circleci
+test-results

@@ -1,4 +1,4 @@
-# Cuery - Composable SQL Querying ![build status](https://travis-ci.org/Schniz/cuery.svg?branch=master)
+# Cuery - Composable SQL Querying [![CircleCI status](https://circleci.com/gh/Schniz/cuery.svg?style=svg)](https://circleci.com/gh/Schniz/cuery)
 
 > A composable SQL query builder based inspired by
 > [styled-components :nail_care:](https://styled-components.com) :sparkles:
